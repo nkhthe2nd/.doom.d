@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! org-super-agenda)
+(package! mu4e)

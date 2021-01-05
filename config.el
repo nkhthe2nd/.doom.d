@@ -12,6 +12,25 @@
   :config
   (setq pdf-view-midnight-colors '("#ABB2BF" . "#282C35")))
 
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
+;;(require 'smtpmail)
+(setq user-mail-address "nattholman@gmail.com"
+      user-full-name  "Natt Holman"
+      mu4e-get-mail-command "mbsync -c ~/mbsyncrc -a"
+      mu4e-update-interval  300
+      mu4e-main-buffer-hide-personal-addresses t
+      message-send-mail-function 'smtpmail-send-it
+      starttls-use-gnutls t
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      mu4e-sent-folder "/account-1/Sent"
+      mu4e-drafts-folder "/account-1/Drafts"
+      mu4e-trash-folder "/account-1/Trash"
+      mu4e-maildir-shortcuts
+      '(("/account-1/Inbox"      . ?i)
+        ("/account-1/Sent Items" . ?s)
+        ("/account-1/Drafts"     . ?d)
+        ("/account-1/Trash"      . ?t)))
+
 ;;(require 'meghanada)
 ;;(add-hook 'java-mode-hook
           ;;(lambda ()
@@ -27,8 +46,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-;;(setq user-full-name "Natt Holman"
-      ;;user-mail-address "nattholman@gmail.com")
+(setq user-full-name "Natt Holman"
+      user-mail-address "nattholman@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
